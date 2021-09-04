@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Room</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/assets/bulma.min.css">
+    <script src="/assets/action_cable.js"></script>
+    <script src="/assets/room_channel.js"></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="box">
+          <div id="messages" class="box" style="min-height:300px">
+          </div>
+          <div class="box">
+            <form id="chat-form" data-room-id="{{ .roomId }}">
+              <div class="field">
+                <div class="control">
+                  <textarea class="textarea" placeholder="message"></textarea>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <button class="button is-dark">Send</button>
+                </div>
+              </div>
+            </form>
+
+            <hr>
+
+            <div class="field mt-5">
+              <legend>Client initiated unsubscribing channel</legend>
+              <div class="control">
+                <button class="button is-dark" id="unsubscribe-btn">
+                  Unsubscribe
+                </button>
+              </div>
+            </div>
+
+            <div class="field mt-5">
+              <legend>Server initiated unsubscribing channel</legend>
+              <div class="control">
+                <button class="button is-dark" id="stop-stream-btn">
+                  Stop Stream (subscription)
+                </button>
+              </div>
+            </div>
+
+            <form class="mt-5" id="kick-form">
+              <legend>Terminate one remote connection.</legend>
+              <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Input a name">
+                </div>
+                <div class="control">
+                  <button class="button is-dark">
+                    Kick!
+                  </button>
+                </div>
+              </div>
+            </form>
+          <div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

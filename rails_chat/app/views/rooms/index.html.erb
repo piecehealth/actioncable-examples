@@ -1,0 +1,22 @@
+<div class="mb-3">
+  <%= form_with url: destroy_session_path, method: :delete do |form| %>
+    <% form.submit "Logout", class: "button is-dark" %>
+  <% end %>
+</div>
+
+<div class="columns">
+  <% [1, 2, 3, 4, "forbidden_room"].each do |i| %>
+    <div class="column">
+      <div class="card">
+        <header class="card-header">
+          <div class="card-header-title">
+            Room <%= i %>
+          </div>
+        </header>
+        <footer class="card-footer">
+          <%= link_to "Entry Room #{i}", room_path(i), class: "card-footer-item button is-dark" %>
+        </footer>
+      </div>
+    </div>
+  <% end %>
+</div>

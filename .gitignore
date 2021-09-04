@@ -1,0 +1,5 @@
+.DS_Store
+/rails_chat/log
+/rails_chat/tmp
+/rails_chat/app/assets/builds
+/node_modules/node_modules

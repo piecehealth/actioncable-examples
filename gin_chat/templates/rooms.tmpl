@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Room</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/assets/bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="mb-3">
+          <form action="/destroy_session" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" autocomplete="off"><input type="hidden" name="authenticity_token" value="qkPJ6pl-2Vb8957VlUWova74aLExx5di-yHsvTR_OYYMYf14rTOOgphMCxqYsYpZl6i6iATfPm1-QX9C0Qg-sw" autocomplete="off"><input type="submit" name="commit" value="Logout" class="button is-dark">
+          </form>
+        </div>
+
+        <div class="columns">
+          {{ range $id := .roomIds }}
+            <div class="column">
+              <div class="card">
+                <header class="card-header">
+                  <div class="card-header-title">
+                    Room {{ $id }}
+                  </div>
+                </header>
+                <footer class="card-footer">
+                  <a href="/rooms/{{$id}}" class="card-footer-item button is-dark">Entry Room {{$id}}</a>
+                </footer>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

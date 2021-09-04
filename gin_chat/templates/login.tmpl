@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Room</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="/assets/action_cable.js"></script>
+    <script src="/assets/room_channel.js"></script>
+    <link rel="stylesheet" href="/assets/bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-three-fifths is-offset-one-fifth box">
+            <form id="chat-form" data-room-id="fake" action="/create_session" accept-charset="UTF-8" method="post">
+              <div class="field">
+                <label class="label" for="name">Name</label>
+                <div class="control">
+                  <input class="input" type="text" name="name" id="name">
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <input type="submit" name="commit" value="Sign in" class="button is-dark" data-disable-with="Sign in">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
