@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/gin-gonic/gin v1.7.7
-	github.com/piecehealth/actioncable v0.1.0
+	github.com/piecehealth/actioncable v0.1.1
 )
 
 require (

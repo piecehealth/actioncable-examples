@@ -18,7 +18,7 @@ var getRoomId = func(c *actioncable.Channel) string {
 	return fmt.Sprintf("room_%s", params.Id)
 }
 
-var roomChannel = &actioncable.ChannelDescripion{
+var roomChannel = &actioncable.ChannelDescription{
 	Name: "RoomChannel",
 	Subscribed: func(c *actioncable.Channel) {
 		roomId := getRoomId(c)
